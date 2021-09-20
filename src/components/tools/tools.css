@@ -9,9 +9,11 @@
     
 }
 
-.o {
-    width: 100px;float: left;
-    height: 138px;border: inset black;
+.tool {
+    
+    width: 100px;
+    float: left;
+    height: 138px;
 }
 
 
@@ -22,44 +24,58 @@
 .sao{
     color: gray;
 }
-.a{
-    background: mediumpurple;
-    border-bottom: 3px black solid;
-}
 
+.image {
+    background: hsl(276deg 85% 56%);
+    height: 83px;
+    border: 2px solid;
+    border-radius: 5%;
+    border-top: none;
+    border-bottom: none;
+}
 .img-fluid {
     max-width: 80%;
-    /* padding-left: 10px; */
-}
-.s{
-    padding-left: 20px;
-    padding-top: 5px;
-    border-bottom: 3px black solid;
-    background: rgb(143, 202, 83);
-}
-.g{
-    background: rgb(143, 202, 83);
-    padding-bottom: 25px;
     
 }
-.g3{
-    padding-bottom: 3px;font-size: 1.2rem;
-    background: rgb(143, 202, 83); padding-left: 5px;
-    color: yellow;
-}
-.g4{
-    padding-bottom: 3px;font-size: 1.2rem;
-    background: rgb(143, 202, 83);padding-left: 5px;
-    color: yellow;
-}
-.current{
+
+
+
+
+.component-name {
     width: 295px;
     height: 30px;
-    background: #418200ed;
+    background: hsl(115deg 83% 56%);
     clear: both;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 5px;
     margin-left: 55px;
+    border: 2px solid black;
     color: yellow;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-family: cursive;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+.title{
+    height: 21px;
+    padding-left: 20px;
+    padding-top: 5px;
+    border: 2px solid black;
+    background: hsl(112deg 51% 61%);
+    border-radius: 10%;
+    color: yellow;
+    font-family: cursive;
+    font-weight: bold;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+.price{
+    height: 21px;
+    padding-bottom: 3px;font-size: 1.2rem;
+    background: hsl(112deg 51% 61%);
+    padding-left: 5px;
+    color: yellow;
+    border: 2px solid black;
+    border-radius: 10%;
+    text-align: center;
+    font-family: cursive;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
