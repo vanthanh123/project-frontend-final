@@ -1,5 +1,4 @@
-import Seeds from "./components/Seeds/seed";
-import Tools from "./components/tools/tools";
+import Game from "./Game";
 
 import './App.css';
 
@@ -7,8 +6,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <Seeds />
-      <Tools/>
+      <Game />
     </>
   );
 }

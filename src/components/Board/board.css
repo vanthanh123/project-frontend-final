@@ -1,0 +1,6 @@
+.board{
+    width: 640px;
+    height: 430px;
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(6, 1fr);
+}

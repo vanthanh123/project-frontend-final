@@ -1,5 +1,5 @@
 import React from "react";
-import "./seed.css";
+import "./seeds.css";
 
 const seeds = (Props) => {
   return (

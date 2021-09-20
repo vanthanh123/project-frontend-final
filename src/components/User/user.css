@@ -1,0 +1,20 @@
+.user{
+    width: 160px;
+    height: 120px;
+    background-color:#A22FEE;
+    color: yellow;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.user img{
+   width: 60px;
+   height: 60px;
+   display: block;
+    margin: auto;
+}
+
+.user p{
+    font-size: 32px;
+    text-shadow: 0px 0px 10px black;
+}
