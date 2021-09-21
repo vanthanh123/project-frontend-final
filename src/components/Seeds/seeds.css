@@ -20,7 +20,8 @@
 }
 
 .img-fluid {
-    max-width: 80%;
+    width: 96px;
+    height: 83px;
 }
 .title{
     height: 21px;

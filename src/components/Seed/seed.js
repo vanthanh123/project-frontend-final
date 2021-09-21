@@ -1,13 +1,18 @@
 import React from 'react';
 import './seed.css';
+import { useSelector } from "react-redux";
 
-const seed = () => {
+
+const Seed = () => {
+    const image = useSelector((state) => state.Seeds.seed.image);
+    const name = useSelector((state) => state.Seeds.seed.name);
+
     return (
-        <div className="seed">
-            <img className="img-fluid" src="/images/Rose_Seed.png" alt="Rose_Seed" />
-            <p>SEED</p>
+        <div className="seedShow">
+            <img className="img-fluid" src={image} alt={name} />
+            <p>{name}</p>
         </div>
     )
 }
 
-export default seed
+export default Seed;

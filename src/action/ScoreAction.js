@@ -1,7 +1,6 @@
-export const score = ()=>{
+export const score = (score) => {
     return {
-        type: "score",
-        score: 300,
-        url: "/images/step2.png",
+        type: "BUY SEED",
+        payload: score,
     }
 }
