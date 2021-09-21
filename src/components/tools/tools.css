@@ -33,13 +33,11 @@
     border-top: none;
     border-bottom: none;
 }
+
 .img-fluid {
-    max-width: 80%;
-    
+    width: 96px;
+    height: 83px;
 }
-
-
-
 
 .component-name {
     width: 295px;

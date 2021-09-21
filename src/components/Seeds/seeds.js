@@ -1,69 +1,81 @@
 import React from "react";
 import "./seeds.css";
+import { useSelector, useDispatch } from "react-redux";
+import { createSeed } from "../../action/SeedsAction";
+import { useState } from "react";
 
-const seeds = (Props) => {
-  return (
-    <>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      </link>
-      
-      <div class="seeds">
-        <div class="seed">
-          <header>
-            <p class="title">MELON</p>
-          </header>
-          <content>
-            <div class="image">
-              <img class="img-fluid" src="/images/melon.png" alt="" />
+const Seeds = (Props) => {
+  const dispatch = useDispatch();
+    const handleClick = (e) => {
+        const name = (e.target.parentElement.previousElementSibling.innerHTML).toLowerCase();
+        const id = new Date().getTime().toString();
+        const price = e.target.parentElement.nextElementSibling.getAttribute('value');
+        const image = `/images/${name}_seed.png`;
+        const timeLevelUp = e.target.parentElement.previousElementSibling.getAttribute('value');
+
+        const newSeed = {id:id, name: name, price: price, image: image, timeLevelUp: timeLevelUp};
+
+        const action = createSeed(newSeed);
+        dispatch(action);
+        
+    };
+
+    return (
+        <>
+            <div className="seeds">
+                <div className="seed">
+                    <p className="title" value="2000">MELON</p>
+
+                    <div className="image">
+                        <img
+                            onClick={handleClick}
+                            className="img-fluid"
+                            src="/images/melon.png"
+                            alt=""
+                        />
+                    </div>
+
+                    <div className="price" value="200">$200</div>
+                </div>
+                <div className="seed">
+                    <p className="title" value="3500">APPLE</p>
+
+                    <div className="image">
+                        <img
+                            onClick={handleClick}
+                            className="img-fluid"
+                            src="/images/apple.png"
+                            alt=""
+                        />
+                    </div>
+
+                    <div className="price" value="350">$350</div>
+                </div>
+                <div className="seed">
+                    <p className="title" value="4000">GRAPE</p>
+
+                    <div className="image">
+                        <img
+                            onClick={handleClick}
+                            className="img-fluid"
+                            src="../images/grape.png"
+                            alt=""
+                        />
+                    </div>
+
+                    <div className="price" value="400">$400</div>
+                </div>
+                <div className="seed">
+                    <p className="title"></p>
+
+                    <div className="image"></div>
+
+                    <div className="price"> </div>
+                </div>
+                <div className="component-name">current seeds</div>
             </div>
-          </content>
-          <footer class="footer">
-            <div class="price">$200</div>
-          </footer>
-        </div>
-        <div class="seed">
-          <header>
-            <p class="title">APPLE</p>
-          </header>
-          <content>
-            <div class="image">
-              <img class="img-fluid" src="/images/apple.png" alt="" />
-            </div>
-          </content>
-          <footer class="footer">
-            <div class="price">$350</div>
-          </footer>
-        </div>
-        <div class="seed">
-          <header>
-            <p class="title">GRAPE</p>
-          </header>
-          <content>
-            <div class="image">
-              <img class="img-fluid" src="../images/grape.png" alt="" />
-            </div>
-          </content>
-          <footer class="footer">
-            <div class="price">$500</div>
-          </footer>
-        </div>
-        <div class="seed">
-          <header>
-          <p class="title"></p>
-          </header>
-          <content>
-            <div class="image"></div>
-          </content>
-          <footer class="footer">
-            <div class="price"> </div>
-          </footer>
-        </div>
-        <div class="component-name">current seeds</div>
-      </div>
-    </>
-  );
+        </>
+    );
 };
 
-export default seeds;
+export default Seeds;

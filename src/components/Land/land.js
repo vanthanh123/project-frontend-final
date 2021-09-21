@@ -4,11 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { seedStep2, seedStep3 } from "../../action/LandsAction";
 import { score } from "../../action/ScoreAction";
 
-const Land = () => {
+const Land = ({value,onClick,i}) => {
     return(
         <>
-            <div className="land">
-                <img className="img" src="" alt="123" />
+            <div className="land" onClick={(e) => onClick(e,i)}>
+                 {value.isGrow && <img className="img" src={value.image} alt={value.name}/>}
             </div>
         </>
     );
