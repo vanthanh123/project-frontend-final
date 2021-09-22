@@ -5,12 +5,6 @@ import Seed from "./components/Seed/seed";
 import Tool from "./components/Tools/tools";
 import Score from "./components/Score/score";
 import User from "./components/User/user";
-import { useState, useEffect, useReducer } from "react";
-
-const defaultState = {
-    lands: [Array(25).fill(null)],
-    number: 0,
-};
 
 const Game = () => {
     const handleClick = (e) => {};

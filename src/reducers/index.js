@@ -1,6 +1,6 @@
-import SeedsReducer from "./SeedsReducer";
-import LandsReducer from "./LandsReducer";
-import ScoreReducer from "./ScoreReducer";
+import SeedsReducer from "./seedsReducer";
+import LandsReducer from "./landsReducer";
+import ScoreReducer from "./scoreReducer";
 import { combineReducers } from "redux"
 
 const rootReducer = combineReducers({
