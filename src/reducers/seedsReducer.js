@@ -2,15 +2,17 @@ const initialState = {
     seed:{
         id: '',
         name: "SEED",
-        image: "/images/apple_seed.png",
+        image: "/images/seed_default.png",
         price: 0,
         timeLevelUp: 0,
         isGrow: false,
         level:1,
+        countCrop:0,
+        imageStep3:"",
     }
 }
 
-const seedsReducer = (state = initialState,action) => {
+const SeedsReducer = (state = initialState,action) => {
     switch (action.type) {
         case "CREATE SEED" :
             return {
@@ -21,4 +23,4 @@ const seedsReducer = (state = initialState,action) => {
     }
 }
 
-export default seedsReducer;
+export default SeedsReducer;

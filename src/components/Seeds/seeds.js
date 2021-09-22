@@ -1,8 +1,7 @@
 import React from "react";
 import "./seeds.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { createSeed } from "../../action/SeedsAction";
-import { useState } from "react";
 
 const Seeds = (Props) => {
   const dispatch = useDispatch();
@@ -12,9 +11,8 @@ const Seeds = (Props) => {
         const price = e.target.parentElement.nextElementSibling.getAttribute('value');
         const image = `/images/${name}_seed.png`;
         const timeLevelUp = e.target.parentElement.previousElementSibling.getAttribute('value');
-
-        const newSeed = {id:id, name: name, price: price, image: image, timeLevelUp: timeLevelUp};
-
+        const imageStep3 = `images/${name}_step3.png`;
+        const newSeed = {id:id, name: name, price: price, image: image, timeLevelUp: timeLevelUp, countCrop: 0, level: 1,imageStep3: imageStep3};
         const action = createSeed(newSeed);
         dispatch(action);
         
@@ -38,7 +36,7 @@ const Seeds = (Props) => {
                     <div className="price" value="200">$200</div>
                 </div>
                 <div className="seed">
-                    <p className="title" value="3500">APPLE</p>
+                    <p className="title" value="3000">APPLE</p>
 
                     <div className="image">
                         <img
@@ -49,10 +47,10 @@ const Seeds = (Props) => {
                         />
                     </div>
 
-                    <div className="price" value="350">$350</div>
+                    <div className="price" value="300">$300</div>
                 </div>
                 <div className="seed">
-                    <p className="title" value="4000">GRAPE</p>
+                    <p className="title" value="3000">GRAPE</p>
 
                     <div className="image">
                         <img
@@ -66,11 +64,18 @@ const Seeds = (Props) => {
                     <div className="price" value="400">$400</div>
                 </div>
                 <div className="seed">
-                    <p className="title"></p>
+                    <p className="title" value="5000">PUMPKIN</p>
 
-                    <div className="image"></div>
+                    <div className="image">
+                    <img
+                            onClick={handleClick}
+                            className="img-fluid"
+                            src="../images/pumpkin.png"
+                            alt=""
+                        />
+                    </div>
 
-                    <div className="price"> </div>
+                    <div className="price" value="500">500</div>
                 </div>
                 <div className="component-name">current seeds</div>
             </div>
