@@ -6,10 +6,10 @@ export const seedLevel2 = (i)=>{
     }
 }
 
-export const seedLevel3 = (i)=>{
+export const seedLevel3 = (i,image)=>{
     return {
         type: "seedLevel 3",
-        payload: "/images/step3.png",
+        payload: image,
         i:i,
     }
 }
@@ -21,3 +21,18 @@ export const grow = (seedGrow,i) => {
         i: i,
     }
 }
+
+export const actionCountCrop = (i) => {
+    return {
+        type: "countCrop",
+        i: i,
+    }
+}
+
+export const removeSeed = (i) => {
+    return {
+        type: "removeSeed",
+        i: i,
+    }
+}
+

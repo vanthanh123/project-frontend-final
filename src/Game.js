@@ -5,6 +5,7 @@ import Seed from "./components/Seed/seed";
 import Tool from "./components/tools/tools";
 import Score from "./components/Score/score";
 import User from "./components/User/user";
+import Menu from "./components/Menu/menu";
 import { useState, useEffect, useReducer } from "react";
 import Start from "./components/start/start";
 import { useDispatch, useSelector } from "react-redux";

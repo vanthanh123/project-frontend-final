@@ -11,9 +11,8 @@ const LandsReducer = (state = initialState, action) => {
                 ],
             };
         case "seedLevel 2":
-            const seedCurrent = state.lands[action.i];
             const newSeedLevel2 = {
-                ...seedCurrent,
+                ...state.lands[action.i],
                 image: action.payload,
                 level: 2,
             };
@@ -23,9 +22,8 @@ const LandsReducer = (state = initialState, action) => {
                 ],
             };
         case "seedLevel 3":
-            const seedCurrent2 = state.lands[action.i];
             const newSeedLevel3 = {
-                ...seedCurrent2,
+                ...state.lands[action.i],
                 image: action.payload,
                 level: 3,
             };
@@ -33,6 +31,22 @@ const LandsReducer = (state = initialState, action) => {
                 lands: [
                     ...state.lands.fill(newSeedLevel3, action.i, action.i + 1),
                 ],
+            };
+        case "countCrop":
+            const newSeedCrop = {
+                ...state.lands[action.i],
+                countCrop: state.lands[action.i].countCrop + 1,
+            };
+            return {
+                lands: [
+                    ...state.lands.fill(newSeedCrop, action.i, action.i + 1),
+                ],
+            };
+        case "removeSeed":
+            return {
+                lands: [
+                    ...state.lands.fill({ isGrow: false}, action.i, action.i + 1)
+                ]
             };
 
         default:
