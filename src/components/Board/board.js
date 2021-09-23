@@ -1,5 +1,5 @@
 import React from 'react';
-import Land from '../Land/Land';
+import Land from '../Land/land';
 import './board.css';
 import { useSelector , useDispatch} from 'react-redux';
 import { grow, seedLevel2, seedLevel3 } from "../../action/LandsAction";
