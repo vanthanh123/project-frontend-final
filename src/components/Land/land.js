@@ -14,4 +14,4 @@ const Land = ({value,onClick,i}) => {
     );
 };
 
-export default Land;
+export default Land;    

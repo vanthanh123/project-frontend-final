@@ -5,7 +5,7 @@ const user = () => {
     return (
         <div className="user">
             <img src="/images/user1.png" alt="user" />
-            <p>Thành</p>
+            <p>Thanh</p>
         </div>
     )
 }

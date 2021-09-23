@@ -1,5 +1,5 @@
-import SeedsReducer from "./SeedsReducer";
-import LandsReducer from "./LandsReducer";
+import SeedsReducer from "./seedsReducer";
+import LandsReducer from "./landsReducer";
 import ScoreReducer from "./ScoreReducer";
 import { combineReducers } from "redux"
 
