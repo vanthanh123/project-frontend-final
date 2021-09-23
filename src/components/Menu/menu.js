@@ -6,13 +6,11 @@ import "./menu.css";
 
 
 const menu = () => {
-    const mn = () =>{
-        alert(123);
-    }
+   
     return (
         <>
             <div class="dropup">
-                <button  onClick={mn}  class="dropbtn">Menu</button>
+                <button  class="dropbtn">Menu</button>
                 <div class="dropup-content">
                     <a href="#">Continue</a>
                     <a href="">Exit</a>

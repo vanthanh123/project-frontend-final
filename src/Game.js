@@ -17,7 +17,7 @@ const defaultState = {
 
 const Game = () => {
     const handleClick = (e) => {};
-
+    
     return (
         <div className="gameContainer">
             <div className="header-top">
