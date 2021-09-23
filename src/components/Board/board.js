@@ -2,8 +2,8 @@ import React from 'react';
 import Land from '../Land/land';
 import './board.css';
 import { useSelector , useDispatch} from 'react-redux';
-import { grow, seedLevel2, seedLevel3 } from "../../action/LandsAction";
-import { score } from "../../action/ScoreAction";
+import { grow, seedLevel2, seedLevel3, actionCountCrop, removeSeed } from "../../action/LandsAction";
+import { buySeed, saleSeed } from "../../action/ScoreAction";
 
 
 
@@ -15,46 +15,70 @@ const Board = () => {
     const timeLevelUp = useSelector((state) => state.Seeds.seed.timeLevelUp);
     const dispatch = useDispatch();
     
-    const handleClick = (e,i) => {
+    const handleClickLand = (e,i) => {
+        if(seed.name === "SEED"){
+            alert("bạn chưa chọn hạt giống");
+            return;
+        }
         if(lands[i].isGrow === true) return;
         if(yourScore < priceSeed){
             alert('bạn không đủ tiền đề mua');
             return;
         }else{
-            const actionScore = score(priceSeed);
+            const actionScore = buySeed(priceSeed);
             dispatch(actionScore);
         }
         const seedGrow = {...seed,isGrow: true};
         const action = grow(seedGrow,i);
         dispatch(action);
-        
+        levelUp2(i,timeLevelUp);
+        levelUp3(i,timeLevelUp*2,lands[i].imageStep3);
+
+    }
+
+    const handleClickImage = (e,i) => {
+        const level = lands[i].level;
+        const countCrop = lands[i].countCrop;
+        const imageStep3 = lands[i].imageStep3;
+        if(level < 3){
+            return;
+        }else{
+                const actionSaleSeed = saleSeed(lands[i].price);
+                dispatch(actionSaleSeed);
+            if(countCrop < 2){
+                const handleActionCountCrop = actionCountCrop(i);
+                dispatch(handleActionCountCrop);
+                levelUp2(i,0);
+                levelUp3(i,timeLevelUp,imageStep3);
+            }else{
+                const actionRemoveSeed = removeSeed(i);
+                dispatch(actionRemoveSeed);
+                e.stopPropagation();
+            }
+        }
+    }
+
+
+    const levelUp2 = (i,timeLevelUp) => {
         setTimeout(() => {
-            handleLevel2(i);
+            const actionLevelupSeed2 = seedLevel2(i);
+            dispatch(actionLevelupSeed2);
         },timeLevelUp);
+    }
 
+    const levelUp3 = (i,timeLevelUp,image) => {
         setTimeout(() => {
-            handleLevel3(i);
-        },timeLevelUp * 2);
-        
+            const actionLevelupSeed3 = seedLevel3(i,image);
+            dispatch(actionLevelupSeed3);
+        },timeLevelUp*2);
     }
-
-    const handleLevel2 = (i) => {
-        const actionLevelupSeed2 = seedLevel2(i);
-        dispatch(actionLevelupSeed2);
-    }
-
-    const handleLevel3 = (i) => {
-        const actionLevelupSeed3 = seedLevel3(i);
-        dispatch(actionLevelupSeed3);
-    }
-
 
     return (
         <div className="board">
            {lands.map((land,i) => {
                return(
                    <div key={i}>
-                        <Land value={land} i={i} onClick={handleClick}/>
+                        <Land value={land} i={i} onClickLand={handleClickLand} onClickImage={handleClickImage}/>
                    </div>
                );
            })}
