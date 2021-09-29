@@ -20,3 +20,12 @@ body{
   justify-content: center;
 }
 
+.gameContainer {
+  /* display: none; */
+}
+
+.startGame {
+  display: block;
+  
+}
+

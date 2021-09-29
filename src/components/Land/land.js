@@ -10,4 +10,4 @@ const Land = ({value,onClickLand,onClickImage,i}) => {
     );
 };
 
-export default Land;
+export default Land;    
