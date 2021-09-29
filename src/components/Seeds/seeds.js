@@ -12,7 +12,8 @@ const Seeds = (Props) => {
         const image = `/images/${name}_seed.png`;
         const timeLevelUp = e.target.parentElement.previousElementSibling.getAttribute('value');
         const imageStep3 = `images/${name}_step3.png`;
-        const newSeed = {id:id, name: name, price: price, image: image, timeLevelUp: timeLevelUp, countCrop: 0, level: 1,imageStep3: imageStep3};
+        const countDroopy = 0;
+        const newSeed = {id:id, name: name, price: price, image: image, timeLevelUp: timeLevelUp, countCrop: 0, level: 1,imageStep3: imageStep3,countDroopy:countDroopy};
         const action = createSeed(newSeed);
         dispatch(action);
         
@@ -50,7 +51,7 @@ const Seeds = (Props) => {
                     <div className="price" value="300">$300</div>
                 </div>
                 <div className="seed">
-                    <p className="title" value="3000">GRAPE</p>
+                    <p className="title" value="4000">GRAPE</p>
 
                     <div className="image">
                         <img

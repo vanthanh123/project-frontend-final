@@ -48,7 +48,16 @@ const LandsReducer = (state = initialState, action) => {
                     ...state.lands.fill({ isGrow: false}, action.i, action.i + 1)
                 ]
             };
-
+        case "countDroopy":
+            const setCountDroopy = {
+                ...state.lands[action.i],
+                countDroopy: (state.lands[action.i].countDroopy + 1),
+            };
+            return {
+                lands: [
+                    ...state.lands.fill(setCountDroopy, action.i, action.i + 1),
+                ],
+            };
         default:
             return state;
     }

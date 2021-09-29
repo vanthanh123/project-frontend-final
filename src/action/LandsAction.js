@@ -36,3 +36,10 @@ export const removeSeed = (i) => {
     }
 }
 
+
+export const countDroopy = (i) => {
+    return {
+        type: "countDroopy",
+        i: i,
+    }
+}
