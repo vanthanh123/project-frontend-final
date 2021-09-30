@@ -2,7 +2,7 @@ import React from "react";
 import Board from "./components/Board/board";
 import Seeds from "./components/Seeds/seeds";
 import Seed from "./components/Seed/seed";
-import Tool from "./components/tools/tools";
+import Tool from "./components/Tools/tools";
 import Score from "./components/Score/score";
 import User from "./components/User/user";
 import Menu from "./components/Menu/menu";
