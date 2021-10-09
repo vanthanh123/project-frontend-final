@@ -1,24 +1,37 @@
-import { render } from "@testing-library/react";
-import { Dropdown } from "antd";
+
 import React from "react";
 import "./menu.css";
+import {exitGame} from "../../action/StartAction";
+import { useDispatch } from "react-redux";
 
+const Menu = () => {
+    const dispatch = useDispatch();
 
+    const handleContinue = () => {
 
-const menu = () => {
+    }
+
+    const handleMute = () => {
+        
+    }
+
+    const handleExit = () => {
+        const exitAction = exitGame();
+        dispatch(exitAction);
+    }
    
     return (
         <>
-            <div class="dropup">
-                <button  class="dropbtn">Menu</button>
-                <div class="dropup-content">
-                    <a href="#">Continue</a>
-                    <a href="">Exit</a>
-                </div>
+            <div className="container_menu">
+                <ul>
+                    <li onClick={handleContinue}>chơi tiếp</li>
+                    <li onClick={handleMute}>tắt nhạc</li>
+                    <li onClick={handleExit}>Thoát</li>
+                </ul>
             </div>
         </>
     )
     
 }
 
-export default menu;
+export default Menu;

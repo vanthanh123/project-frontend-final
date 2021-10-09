@@ -3,7 +3,7 @@ import './score.css';
 import { useSelector } from "react-redux";
 
 const Score = () => {
-    const score = useSelector((state) => state.Score.score);
+    const score = useSelector((state) => state.Score.score); // lấy điểm số hiện tại trong store
 
     return (
         <div className="score">

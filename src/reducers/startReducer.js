@@ -9,6 +9,10 @@ const startReducer = (state = initialState,action) => {
             return {
                 ...state, start: 1, name: action.payload
             };
+            case "EXIT GAME" :
+            return {
+                ...state, start: 0
+            };
             default :
             return state;
     }

@@ -9,7 +9,7 @@ const initialState = {
         level:1,
         countCrop:0,
         imageStep3:"",
-        countDroopy: 0,
+        isDroopy:false,
     }
 }
 

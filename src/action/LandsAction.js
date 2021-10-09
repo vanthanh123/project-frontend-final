@@ -37,9 +37,17 @@ export const removeSeed = (i) => {
 }
 
 
-export const countDroopy = (i) => {
+export const droopy = (i) => {
     return {
-        type: "countDroopy",
+        type: "droopy",
+        image: "/images/droopy.png",
+        i: i
+    }
+}
+
+export const isDroopy = (i) => {
+    return {
+        type: "isDroopy",
         i: i,
     }
 }

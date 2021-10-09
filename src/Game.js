@@ -6,23 +6,19 @@ import Tool from "./components/Tools/tools";
 import Score from "./components/Score/score";
 import User from "./components/User/user";
 import Menu from "./components/Menu/menu";
-import { useState, useEffect, useReducer } from "react";
 import Start from "./components/start/start";
+import './App.css';
+
 import { useDispatch, useSelector } from "react-redux";
-// const defaultState = {
-//     lands: [Array(25).fill(null)],
-//     number: 0,
-// };
+import { useState } from "react";
 
 const Game = () => {
-    const handleClick = (e) => {};
+    const [displayMenu, setDisplayMenu] = useState(false)
     const playGame = useSelector((state) => state.Start.start);
-
             if(playGame === 0){
                 return (
                     <Start />
                 )
-                
             }
             else{
                 return(
@@ -32,18 +28,19 @@ const Game = () => {
                             <Seeds />
                             <Tool />
                             <User />
-                            <Score />
-                            
+                            <Score /> 
                         </div>
                     <div className="boardContainer">
-                        <Board lands={[123, 123,213,123, 123, 123,213,123, 123, 123,213,123, 123, 123,213,123, 123, 123,213,123, 123, 123,213,213]} onClick={handleClick} />
+                        <Board />
+                        {displayMenu && <Menu />}
                     </div>
+                        <div className="footer">
+                            <button className="btn-menu" onClick={() => setDisplayMenu(!displayMenu)}>Menu</button>
+                        </div>
                     </div>
                 )
                 
             }  
-            
-        
 };
 
 export default Game;

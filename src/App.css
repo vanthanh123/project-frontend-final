@@ -1,6 +1,7 @@
 body{
   font-family: cursive;
   background: #A22FEE;
+  box-sizing: border-box;
 }
 
 .gameContainer{
@@ -18,14 +19,29 @@ body{
   display: flex;
   margin-top:50px;
   justify-content: center;
-}
-
-.gameContainer {
-  /* display: none; */
+  position: relative;
 }
 
 .startGame {
   display: block;
-  
 }
+
+.btn-menu{
+  display: block;
+  font-family: cursive;
+  width: 100px;
+  height: 50px;
+  font-size: 24px;
+  background-color: #A22FEE;
+  border: 1px solid yellow !important;
+  color: yellow;
+  border-radius:8px;
+  margin-left: 20px;
+}
+
+.btn-menu:hover{
+  box-shadow: 0 0 5px 3px;
+}
+
+
 

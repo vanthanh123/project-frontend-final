@@ -4,3 +4,9 @@ export const startGame = (name) => {
         payload: name
     }
 }
+
+export const exitGame = () => {
+    return{
+        type: "EXIT GAME",
+    }
+}

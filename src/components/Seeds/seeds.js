@@ -6,14 +6,14 @@ import { createSeed } from "../../action/SeedsAction";
 const Seeds = (Props) => {
   const dispatch = useDispatch();
     const handleClick = (e) => {
-        const name = (e.target.parentElement.previousElementSibling.innerHTML).toLowerCase();
+        const name = (e.target.parentElement.previousElementSibling.innerHTML).toLowerCase(); 
         const id = new Date().getTime().toString();
         const price = e.target.parentElement.nextElementSibling.getAttribute('value');
         const image = `/images/${name}_seed.png`;
         const timeLevelUp = e.target.parentElement.previousElementSibling.getAttribute('value');
         const imageStep3 = `images/${name}_step3.png`;
-        const countDroopy = 0;
-        const newSeed = {id:id, name: name, price: price, image: image, timeLevelUp: timeLevelUp, countCrop: 0, level: 1,imageStep3: imageStep3,countDroopy:countDroopy};
+        const isDroopy = false;
+        const newSeed = {id:id, name: name, price: price, image: image, timeLevelUp: timeLevelUp, countCrop: 0, level: 1,imageStep3: imageStep3,isDroopy: isDroopy};
         const action = createSeed(newSeed);
         dispatch(action);
         

@@ -9,10 +9,19 @@ import { useState } from "react";
 const Start = (Props) => {
     const [name, setname] = useState('');
     const dispatch = useDispatch();
-    const playGame = (e) =>{
-        const actionStart = startGame(name);
-        dispatch(actionStart);
-        
+
+    const mainSound = new Audio();
+    mainSound.src = 'sound/background.mp3';
+    mainSound.volume = 0.2;
+
+    const playGame = (e) => {
+        if(name !== '' && name.length < 20){
+            const actionStart = startGame(name);
+            dispatch(actionStart);
+            mainSound.play();
+        }else{
+            alert('bạn chưa nhập tên người chơi');
+        }
     }
     return (
         

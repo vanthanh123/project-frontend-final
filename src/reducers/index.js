@@ -1,6 +1,6 @@
 import SeedsReducer from "./seedsReducer";
 import LandsReducer from "./landsReducer";
-import ScoreReducer from "./ScoreReducer";
+import ScoreReducer from "./scoreReducer";
 import startReducer from "./startReducer";
 import { combineReducers } from "redux"
 
