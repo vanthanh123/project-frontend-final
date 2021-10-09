@@ -1,6 +1,6 @@
 import React from "react";
-import "./start.css";
-import { useSelector , useDispatch} from 'react-redux';
+import "./Start.css";
+import { useDispatch} from 'react-redux';
 import { startGame } from "../../action/StartAction";
 import { useState } from "react";
 

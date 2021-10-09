@@ -1,5 +1,5 @@
 import React from 'react';
-import './score.css';
+import './Score.css';
 import { useSelector } from "react-redux";
 
 const Score = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./seeds.css";
+import "./Seeds.css";
 import { useDispatch } from "react-redux";
 import { createSeed } from "../../action/SeedsAction";
 

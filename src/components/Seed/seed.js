@@ -1,5 +1,5 @@
 import React from 'react';
-import './seed.css';
+import './Seed.css';
 import { useSelector } from "react-redux";
 
 

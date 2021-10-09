@@ -1,6 +1,6 @@
 import React from "react";
-import Land from "../Land/land";
-import "./board.css";
+import Land from "../Land/Land";
+import "./Board.css";
 import { useSelector, useDispatch } from "react-redux"; //import để sử dụng 2 hook useSelector và useDispatch để sử dụng trong redux
 import {
     grow,
@@ -9,10 +9,9 @@ import {
     actionCountCrop,
     removeSeed,
     droopy,
-    isDroopy,
 } from "../../action/LandsAction"; // import các action của land
 import { buySeed, saleSeed } from "../../action/ScoreAction"; // import các action của score
-import { timeDroopy } from "../../GameHelper"; // import các giá trị của gamehelper
+import { useEffect } from "react";
 
 const Board = () => {
     const lands = useSelector((state) => state.Lands.lands); // lấy giá trị của mảng land trong store
@@ -22,6 +21,24 @@ const Board = () => {
     const timeLevelUp = useSelector((state) => state.Seeds.seed.timeLevelUp); // lấy thời gian trưởng thành của 1 hạt giống trong store
     const dispatch = useDispatch(); // dùng để khởi tạo dispatch để thực thi action
     var timeOutDroopy; // tạo biên toàn cục để clear settimeout khi cây được thu hoạch trước khi nó héo
+
+    const cropSound = new Audio();
+    cropSound.src = 'sound/gold_add.mp3';
+    cropSound.volume = 0.6;
+
+    const dropSound = new Audio();
+    dropSound.src = 'sound/drop.mp3';
+    dropSound.volume = 0.6;
+
+    useEffect(() => {
+        const checkLands = lands.every((land) => {
+            return land.isGrow === false;
+        })
+        if(checkLands === true && yourScore < 200){
+            alert("bạn đã thua");
+            window.location.reload();
+        }
+    }, [lands,yourScore])
 
     //hàm sử lý sự kiện click vào ô đất
     const handleClickLand = (e, i) => {
@@ -59,6 +76,7 @@ const Board = () => {
         if (imageCurrent === "/images/droopy.png") {
             const actionRemoveSeed = removeSeed(i);
             dispatch(actionRemoveSeed);
+            dropSound.play();
             e.stopPropagation(); // chặn hành động của sự kiện cha
             return;
         }
@@ -68,6 +86,7 @@ const Board = () => {
         } else {
             const actionSaleSeed = saleSeed(lands[i].price); // gọi tới action bán cây
             dispatch(actionSaleSeed);
+            cropSound.play();
             // kiểm tra cây được bán đủ 3 lần chưa nếu đủ thì xóa cây
             if (countCrop < 2) {
                 console.log(lands[i].isDroopy);

@@ -1,5 +1,5 @@
 import React from "react";
-import "./land.css";
+import "./Land.css";
 
 const Land = ({ value, onClickLand, onClickImage, i }) => {
     return (

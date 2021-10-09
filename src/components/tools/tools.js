@@ -1,5 +1,5 @@
 import React from "react";
-import "./tools.css";
+import "./Tools.css";
 
 const tools = (Props) => {
     return (
