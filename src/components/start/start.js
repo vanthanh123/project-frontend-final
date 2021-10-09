@@ -28,10 +28,8 @@ const Start = (Props) => {
         <div className="start">
             <h1>Chào Mừng !!!</h1>
             <p>Nhập tên người chơi</p>
-            
-                <input id="name-person" name="name" type="text" required onChange={(e) => setname(e.target.value)}></input>
-                <button id="btn-play" onClick={(e) => playGame(e)}>Chơi</button>
-            
+            <input id="name-person" name="name" type="text" required onChange={(e) => setname(e.target.value)}></input>
+            <button id="btn-play" onClick={(e) => playGame(e)}>Chơi</button>
         </div>
                    
     );
